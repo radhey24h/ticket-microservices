@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Notification.Function": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7096"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30762,
+      "useSSL": false
+    }
+  }
+}
