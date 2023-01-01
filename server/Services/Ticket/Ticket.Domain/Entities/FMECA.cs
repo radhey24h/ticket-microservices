@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ticket.Domain.Common;
 namespace Ticket.Domain.Entities;
 
-public class FMECAEntry:Audit
+public class FMECA:Audit
 {
     public int FMECAId { get; set; }
     public string FMECAName { get; set; } = string.Empty;
