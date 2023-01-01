@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ticket.Domain.Common;
+using Ticket.Domain.Common.Enum;
+
 namespace Ticket.Domain.Entities;
 
 public class FMECA:Audit
