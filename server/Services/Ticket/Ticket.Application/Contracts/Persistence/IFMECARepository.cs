@@ -9,6 +9,6 @@ namespace Ticket.Application.Contracts.Persistence;
 
 public interface IFMECARepository : IAsyncRepository<FMECA>
 {
-    Task<IReadOnlyList<FMECA>> GetFMECAByProjectIdAsync(int projectId);
+    Task<IReadOnlyList<FMECA>> GetFMECAByUserIdAsync(string userId);
 }
 

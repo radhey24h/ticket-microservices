@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ticket.Domain.Common.Enum;
 
-namespace Ticket.Application.Features.FMECA.Queries
+namespace Ticket.Application.Features.FMECA.Queries.GetAllFMECA
 {
     public class FMECADTO
     {
