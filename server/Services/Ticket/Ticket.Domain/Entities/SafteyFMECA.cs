@@ -9,10 +9,10 @@ namespace Ticket.Domain.Entities;
 public class SafteyFMECA : Audit
 {
     public int FMECAId { get; set; }
-    public string FMECAName { get; set; } = string.Empty;
-    public string Project { get; set; }=string.Empty;
-    public int TopLevelPartNumber { get; set; }
-    public FMECAType FMECAType { get; set; }
-    public ProcessFMECAType ProcessFMECAType { get; set; }
-    
+    public int sequenceId { get; set; }
+    public int PartLevel { get; set; }
+    public string PartNumber { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+
 }
+
