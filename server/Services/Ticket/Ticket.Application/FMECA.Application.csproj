@@ -7,15 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticket.Domain\Ticket.Domain.csproj" />
+    <ProjectReference Include="..\Ticket.Domain\FMECA.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Behaviours\" />
     <Folder Include="Features\DesignFMECA\Commands\" />
     <Folder Include="Features\DesignFMECA\Queries\" />
-    <Folder Include="Features\FMECA\Commands\Delete\" />
-    <Folder Include="Features\FMECA\Commands\Update\" />
     <Folder Include="Features\ProcessFMECA\Commands\" />
     <Folder Include="Features\ProcessFMECA\Queries\" />
     <Folder Include="Features\SafteyFMECA\Commands\" />
@@ -26,6 +23,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
   </ItemGroup>

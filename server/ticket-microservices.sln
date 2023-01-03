@@ -5,23 +5,23 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8E814CD0-3762-4236-99BB-A28F4F9294E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket", "Ticket", "{76CD9031-C0B6-48E3-AF10-22325AE0CD49}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FMECA", "FMECA", "{76CD9031-C0B6-48E3-AF10-22325AE0CD49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{7B79916B-7A5E-43AD-BD27-10B12E2E5217}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileManagement", "FileManagement", "{29CB6ED9-6655-4E03-B530-FC20973AEFD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticket.API", "Services\Ticket\Ticket.API\Ticket.API.csproj", "{DE9BB5AD-D825-4AE1-ACCA-37A0E81E03FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMECA.API", "Services\Ticket\Ticket.API\FMECA.API.csproj", "{DE9BB5AD-D825-4AE1-ACCA-37A0E81E03FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Function", "Services\Notification\Notification.Function\Notification.Function.csproj", "{2F175726-40F3-44FD-9F3B-746D2B9D9B1D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManagement.API", "Services\FileManagement\FileManagement.API\FileManagement.API.csproj", "{82B16353-A720-4986-AF0D-C02E0B0DC7B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Domain", "Services\Ticket\Ticket.Domain\Ticket.Domain.csproj", "{9D7BAB05-8B3B-428E-AFA9-DAE9229448CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Domain", "Services\Ticket\Ticket.Domain\FMECA.Domain.csproj", "{9D7BAB05-8B3B-428E-AFA9-DAE9229448CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Application", "Services\Ticket\Ticket.Application\Ticket.Application.csproj", "{843EDE10-8998-42F1-83F2-A5359D7CFA2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Application", "Services\Ticket\Ticket.Application\FMECA.Application.csproj", "{843EDE10-8998-42F1-83F2-A5359D7CFA2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Infrastructure", "Services\Ticket\Ticket.Infrastructure\Ticket.Infrastructure.csproj", "{4100AE1D-A02C-494B-9F51-E581B923FA7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Infrastructure", "Services\Ticket\Ticket.Infrastructure\FMECA.Infrastructure.csproj", "{4100AE1D-A02C-494B-9F51-E581B923FA7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

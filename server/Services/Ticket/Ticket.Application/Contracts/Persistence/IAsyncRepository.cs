@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
-using Ticket.Domain.Common;
+using FMECA.Domain.Common;
 
-namespace Ticket.Application.Contracts.Persistence;
+namespace FMECA.Application.Contracts.Persistence;
 public interface IAsyncRepository<T> where T : Audit
 {
     Task<IReadOnlyList<T>> GetAllAsync();

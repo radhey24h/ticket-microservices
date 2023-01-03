@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ticket.Domain.Common.Enum;
+namespace FMECA.Domain.Common.Enum;
 
 public enum FMECAType
 {

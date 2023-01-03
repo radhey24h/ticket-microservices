@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ticket.Domain.Common;
-namespace Ticket.Domain.Entities;
+using FMECA.Domain.Common;
+namespace FMECA.Domain.Entities;
 
 public class ProcessFMECA:Audit
 {

@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticket.Application\Ticket.Application.csproj" />
-    <ProjectReference Include="..\Ticket.Infrastructure\Ticket.Infrastructure.csproj" />
+    <ProjectReference Include="..\Ticket.Application\FMECA.Application.csproj" />
+    <ProjectReference Include="..\Ticket.Infrastructure\FMECA.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

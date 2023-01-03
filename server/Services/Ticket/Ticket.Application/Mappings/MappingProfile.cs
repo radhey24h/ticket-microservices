@@ -1,19 +1,18 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ticket.Application.Features.FMECA.Queries.GetAllFMECA;
-using Ticket.Domain.Entities;
+using FMECA.Application.Features.MetadataFMECA.Commands.Insert;
+using FMECA.Application.Features.MetadataFMECA.Commands.Update;
+using FMECA.Application.Features.MetadataFMECA.Queries.GetAllFMECA;
+using FMECA.Domain.Entities;
 
-namespace Ticket.Application.Mappings;
+namespace FMECA.Application.Mappings;
 
 public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<FMECA, FMECADTO>().ReverseMap();
+        CreateMap<FMECADetails, FMECADTO>().ReverseMap();
+        CreateMap<FMECADetails, CreateFMECADetailsCommand>().ReverseMap();
+        CreateMap<FMECADetails, UpdateFMECADetailsCommand>().ReverseMap();
     }
 
 }

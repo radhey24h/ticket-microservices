@@ -1,14 +1,9 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ticket.Domain.Common.Enum;
+﻿using FMECA.Domain.Common.Enum;
+using MediatR;
 
-namespace Ticket.Application.Features.FMECA.Commands.Insert;
+namespace FMECA.Application.Features.MetadataFMECA.Commands.Update;
 
-public class CreateFMECACommand : IRequest<int>
+public class UpdateFMECADetailsCommand : IRequest
 {
     public int FMECAId { get; set; }
     public string FMECAName { get; set; } = string.Empty;

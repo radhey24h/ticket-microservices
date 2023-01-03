@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ticket.Domain.Common;
-using Ticket.Domain.Common.Enum;
+using FMECA.Domain.Common;
+using FMECA.Domain.Common.Enum;
 
-namespace Ticket.Domain.Entities;
+namespace FMECA.Domain.Entities;
 
-public class FMECA:Audit
+public class FMECADetails:Audit
 {
     public int FMECAId { get; set; }
     public string FMECAName { get; set; } = string.Empty;

@@ -5,23 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ticket.Application.Contracts.Persistence;
+using FMECA.Application.Contracts.Persistence;
 
-namespace Ticket.Application.Features.FMECA.Queries.GetAllFMECA;
+namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllFMECA;
 
 public class GetAllFMECAQueryHandler : IRequestHandler<GetAllFMECAQuery, List<FMECADTO>>
 {
-    private readonly IFMECARepository _fmecarepository;
+    private readonly IFMECADetailsRepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
-    public GetAllFMECAQueryHandler(IFMECARepository fmecarepository, IMapper mapper)
+    public GetAllFMECAQueryHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper)
     {
-        _fmecarepository = fmecarepository ?? throw new ArgumentNullException(nameof(fmecarepository));
+        _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
     public async Task<List<FMECADTO>> Handle(GetAllFMECAQuery request, CancellationToken cancellationToken)
     {
-        var fmecaList = await _fmecarepository.GetFMECAByUserIdAsync(request.UserId);
+        var fmecaList = await _fmecaDetailsRepository.GetFMECAByUserIdAsync(request.UserId);
         return _mapper.Map<List<FMECADTO>>(fmecaList);
     }
 }

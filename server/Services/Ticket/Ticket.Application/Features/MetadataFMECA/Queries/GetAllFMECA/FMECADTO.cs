@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ticket.Domain.Common.Enum;
+﻿using FMECA.Domain.Common.Enum;
 
-namespace Ticket.Application.Features.FMECA.Queries.GetAllFMECA
+namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllFMECA
 {
     public class FMECADTO
     {

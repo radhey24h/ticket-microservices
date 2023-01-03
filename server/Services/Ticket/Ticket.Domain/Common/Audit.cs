@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ticket.Domain.Common;
+namespace FMECA.Domain.Common;
 
 public abstract class Audit
 {
