@@ -21,13 +21,13 @@ public class DeleteMetadatFMECACommandHandler : IRequestHandler<DeleteMetadatFME
 
     public async Task<Unit> Handle(DeleteMetadatFMECACommand request, CancellationToken cancellationToken)
     {
-        var fmecaToDelete = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAID);
+        var fmecaToDelete = await _fmecaDetailsRepository.GetByIdAsync(request.FMECANumber);
         if (fmecaToDelete == null)
         {
-             throw new NotFoundException(nameof(fmecaToDelete), request.FMECAID);
+             throw new NotFoundException(nameof(fmecaToDelete), request.FMECANumber);
         }
         await _fmecaDetailsRepository.DeleteAsync(fmecaToDelete);
-        _logger.LogInformation($" FMECA {fmecaToDelete.FMECAID} is deleted successfully.");
+        _logger.LogInformation($" FMECA {fmecaToDelete.FMECANumber} is deleted successfully.");
         return Unit.Value;
     }
 }

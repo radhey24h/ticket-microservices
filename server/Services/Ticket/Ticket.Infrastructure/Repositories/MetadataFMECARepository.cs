@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace FMECA.Infrastructure.Repositories;
 
 public class MetadataFMECARepository: RepositoryBase<MetadataFMECA>, IMetadataFMECARepository
@@ -16,11 +15,11 @@ public class MetadataFMECARepository: RepositoryBase<MetadataFMECA>, IMetadataFM
     {
     }
 
-    public async Task<IEnumerable<MetadataFMECA>> GetFMECAByUserIdAsync(int userName)
+    public async Task<IReadOnlyList<MetadataFMECA>> GetFMECAByUserNameAsync(string userName)
     {
         var ofmecaList = await _dbContext.MetadataFMECA
-                            .Where(o => o.FMECAID == userName)
-                            .ToListAsync();
+                          .Where(o => o.Owner == userName)
+                          .ToListAsync();
         return ofmecaList;
     }
 

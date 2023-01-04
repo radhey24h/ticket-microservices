@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using FMECA.Domain.Entities;
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Insert;
 
-public class CreateMetadatFMECACommandHandler : IRequestHandler<CreateMetadatFMECACommand, int>
+public class CreateMetadatFMECACommandHandler : IRequestHandler<CreateMetadatFMECACommand, string>
 {
     private readonly IMetadataFMECARepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ public class CreateMetadatFMECACommandHandler : IRequestHandler<CreateMetadatFME
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<int> Handle(CreateMetadatFMECACommand request, CancellationToken cancellationToken)
+    public async Task<string> Handle(CreateMetadatFMECACommand request, CancellationToken cancellationToken)
     {
         var fmecaEntity= _mapper.Map<Domain.Entities.MetadataFMECA>(request);
         var newfmecaEntity= await _fmecaDetailsRepository.AddAsync(fmecaEntity);
-        _logger.LogInformation($" New FMECA {newfmecaEntity.FMECAID} is successfully created.");
-        return newfmecaEntity.FMECAID;
+        _logger.LogInformation($" New FMECA {newfmecaEntity.FMECANumber} is successfully created.");
+        return newfmecaEntity.FMECANumber;
     }
 }

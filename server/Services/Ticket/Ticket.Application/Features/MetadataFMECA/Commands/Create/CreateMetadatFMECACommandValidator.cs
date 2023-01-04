@@ -5,7 +5,7 @@ public class CreateMetadatFMECACommandValidator : AbstractValidator<CreateMetada
 {
     public CreateMetadatFMECACommandValidator()
     {
-        RuleFor(p => p.FMECAName)
+        RuleFor(p => p.FMECANumber)
                .NotEmpty().WithMessage("{FMECAName} is required.")
                .NotNull()
                .MaximumLength(100).WithMessage("{FMECAName} must not exceed 100 characters.");

@@ -1,14 +1,20 @@
 ﻿using FMECA.Domain.Common.Enum;
 using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Insert;
 
-public class CreateMetadatFMECACommand : IRequest<int>
+public class CreateMetadatFMECACommand : IRequest<string>
 {
-    public int FMECAID { get; set; }
-    public string FMECAName { get; set; } = string.Empty;
-    public string Project { get; set; } = string.Empty;
-    public int TopLevelPartNumber { get; set; }
+    public string FMECANumber { get; set; } = string.Empty;
     public FMECAType FMECAType { get; set; }
+    public FMECAStatus FMECAStatus { get; set; }
+    public string TopLevelPartNumber { get; set; } = string.Empty;
+    public string TopLevelPartDescription { get; set; } = string.Empty;
+    public string ProcessName { get; set; } = string.Empty;
+    public string Owner { get; set; } = string.Empty;
+    public string Attachments { get; set; } = string.Empty;
+    public string ProjectID { get; set; } = string.Empty;
+    public string ProjectName { get; set; } = string.Empty;
     public ProcessFMECAType ProcessFMECAType { get; set; }
 }

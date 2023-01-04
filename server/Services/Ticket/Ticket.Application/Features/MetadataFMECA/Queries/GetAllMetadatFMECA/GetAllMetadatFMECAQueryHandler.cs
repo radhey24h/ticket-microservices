@@ -21,7 +21,7 @@ public class GetAllMetadatFMECAQueryHandler : IRequestHandler<GetAllMetadatFMECA
 
     public async Task<List<MetadatFMECADTO>> Handle(GetAllMetadatFMECAQuery request, CancellationToken cancellationToken)
     {
-        var fmecaList = await _fmecaDetailsRepository.GetFMECAByUserIdAsync(request.UserId);
+        var fmecaList = await _fmecaDetailsRepository.GetAllAsync();
         return _mapper.Map<List<MetadatFMECADTO>>(fmecaList);
     }
 }

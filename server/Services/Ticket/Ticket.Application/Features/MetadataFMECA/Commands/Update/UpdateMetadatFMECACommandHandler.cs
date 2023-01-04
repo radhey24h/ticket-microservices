@@ -21,15 +21,15 @@ public class UpdateMetadatFMECACommandHandler : IRequestHandler<UpdateMetadatFME
 
     public async Task<Unit> Handle(UpdateMetadatFMECACommand request, CancellationToken cancellationToken)
     {
-        var fmecaToUpdate = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAID);
+        var fmecaToUpdate = await _fmecaDetailsRepository.GetByIdAsync(request.FMECANumber);
         if (fmecaToUpdate == null)
         {
-            throw new NotFoundException(nameof(Domain.Entities.MetadataFMECA), request.FMECAID);
+            throw new NotFoundException(nameof(Domain.Entities.MetadataFMECA), request.FMECANumber);
         }
 
         _mapper.Map(request, fmecaToUpdate, typeof(UpdateMetadatFMECACommand), typeof(Domain.Entities.MetadataFMECA));
         await _fmecaDetailsRepository.UpdateAsync(fmecaToUpdate);
-        _logger.LogInformation($"Order {fmecaToUpdate.FMECAID} is successfully updated.");
+        _logger.LogInformation($"Order {fmecaToUpdate.FMECANumber} is successfully updated.");
         return Unit.Value;
     }
 }

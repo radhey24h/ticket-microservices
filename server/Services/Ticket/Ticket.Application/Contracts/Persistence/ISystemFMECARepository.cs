@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace FMECA.Application.Contracts.Persistence;
 
-internal class ISafteyFMECA
+internal interface ISystemFMECARepository
 {
 }

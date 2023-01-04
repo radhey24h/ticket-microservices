@@ -5,6 +5,6 @@ namespace FMECA.Application.Features.MetadataFMECA.Commands.Delete;
 
 public class DeleteMetadatFMECACommand : IRequest
 {
-    public int FMECAID { get; set; }
+    public string FMECANumber { get; set; }
     
 }

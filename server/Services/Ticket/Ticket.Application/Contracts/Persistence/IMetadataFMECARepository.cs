@@ -9,6 +9,6 @@ namespace FMECA.Application.Contracts.Persistence;
 
 public interface IMetadataFMECARepository : IAsyncRepository<MetadataFMECA>
 {
-    Task<IReadOnlyList<MetadataFMECA>> GetFMECAByUserIdAsync(int userId);
+    Task<IReadOnlyList<MetadataFMECA>> GetFMECAByUserNameAsync(string userName);
 }
 
