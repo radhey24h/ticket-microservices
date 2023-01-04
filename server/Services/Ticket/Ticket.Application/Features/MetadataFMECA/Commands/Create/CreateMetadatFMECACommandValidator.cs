@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Insert;
-public class CreateFMECADetailsCommandValidator : AbstractValidator<CreateFMECADetailsCommand>
+public class CreateMetadatFMECACommandValidator : AbstractValidator<CreateMetadatFMECACommand>
 {
-    public CreateFMECADetailsCommandValidator()
+    public CreateMetadatFMECACommandValidator()
     {
         RuleFor(p => p.FMECAName)
                .NotEmpty().WithMessage("{FMECAName} is required.")

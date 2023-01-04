@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FMECA.Application.Contracts.Persistence
+namespace FMECA.Application.Contracts.Persistence;
+
+internal class IProcessFMECA
 {
-    internal class IProcessFMECA
-    {
-    }
 }

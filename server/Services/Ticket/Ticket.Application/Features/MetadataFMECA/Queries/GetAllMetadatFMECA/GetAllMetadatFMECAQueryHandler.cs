@@ -7,21 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 using FMECA.Application.Contracts.Persistence;
 
-namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllFMECA;
+namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllMetadatFMECA;
 
-public class GetAllFMECAQueryHandler : IRequestHandler<GetAllFMECAQuery, List<FMECADTO>>
+public class GetAllMetadatFMECAQueryHandler : IRequestHandler<GetAllMetadatFMECAQuery, List<MetadatFMECADTO>>
 {
     private readonly IFMECADetailsRepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
-    public GetAllFMECAQueryHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper)
+    public GetAllMetadatFMECAQueryHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-    public async Task<List<FMECADTO>> Handle(GetAllFMECAQuery request, CancellationToken cancellationToken)
+    public async Task<List<MetadatFMECADTO>> Handle(GetAllMetadatFMECAQuery request, CancellationToken cancellationToken)
     {
         var fmecaList = await _fmecaDetailsRepository.GetFMECAByUserIdAsync(request.UserId);
-        return _mapper.Map<List<FMECADTO>>(fmecaList);
+        return _mapper.Map<List<MetadatFMECADTO>>(fmecaList);
     }
 }

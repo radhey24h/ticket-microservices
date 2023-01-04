@@ -6,28 +6,28 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Update;
 
-public class UpdateFMECADetailsCommandHandler : IRequestHandler<UpdateFMECADetailsCommand>
+public class UpdateMetadatFMECACommandHandler : IRequestHandler<UpdateMetadatFMECACommand>
 {
     private readonly IFMECADetailsRepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
-    private readonly ILogger<UpdateFMECADetailsCommand> _logger;
+    private readonly ILogger<UpdateMetadatFMECACommand> _logger;
 
-    public UpdateFMECADetailsCommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<UpdateFMECADetailsCommand> logger)
+    public UpdateMetadatFMECACommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<UpdateMetadatFMECACommand> logger)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<Unit> Handle(UpdateFMECADetailsCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateMetadatFMECACommand request, CancellationToken cancellationToken)
     {
-        var fmecaToUpdate = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAId);
+        var fmecaToUpdate = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAID);
         if (fmecaToUpdate == null)
         {
-            throw new NotFoundException(nameof(FMECADetails), request.FMECAId);
+            throw new NotFoundException(nameof(Domain.Entities.MetadataFMECA), request.FMECAID);
         }
 
-        _mapper.Map(request, fmecaToUpdate, typeof(UpdateFMECADetailsCommand), typeof(FMECADetails));
+        _mapper.Map(request, fmecaToUpdate, typeof(UpdateMetadatFMECACommand), typeof(Domain.Entities.MetadataFMECA));
         await _fmecaDetailsRepository.UpdateAsync(fmecaToUpdate);
         _logger.LogInformation($"Order {fmecaToUpdate.FMECAId} is successfully updated.");
         return Unit.Value;

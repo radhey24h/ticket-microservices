@@ -3,9 +3,9 @@ using MediatR;
 
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Insert;
 
-public class CreateFMECADetailsCommand : IRequest<int>
+public class CreateMetadatFMECACommand : IRequest<int>
 {
-    public int FMECAId { get; set; }
+    public int FMECAID { get; set; }
     public string FMECAName { get; set; } = string.Empty;
     public string Project { get; set; } = string.Empty;
     public int TopLevelPartNumber { get; set; }

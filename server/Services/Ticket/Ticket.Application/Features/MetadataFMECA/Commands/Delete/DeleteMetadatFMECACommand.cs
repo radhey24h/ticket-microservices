@@ -3,8 +3,8 @@ using MediatR;
 
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Delete;
 
-public class DeleteFMECADetailsCommand : IRequest
+public class DeleteMetadatFMECACommand : IRequest
 {
-    public int FMECAId { get; set; }
+    public int FMECAID { get; set; }
     
 }

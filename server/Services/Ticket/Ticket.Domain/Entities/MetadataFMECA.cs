@@ -8,7 +8,7 @@ using FMECA.Domain.Common.Enum;
 
 namespace FMECA.Domain.Entities;
 
-public class FMECADetails:Audit
+public class MetadataFMECA:Audit
 {
     public int FMECAId { get; set; }
     public string FMECAName { get; set; } = string.Empty;

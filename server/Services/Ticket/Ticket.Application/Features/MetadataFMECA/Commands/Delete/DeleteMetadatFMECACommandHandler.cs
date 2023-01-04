@@ -6,25 +6,25 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 namespace FMECA.Application.Features.MetadataFMECA.Commands.Delete;
 
-public class DeleteFMECADetailsCommandHandler : IRequestHandler<DeleteFMECADetailsCommand>
+public class DeleteMetadatFMECACommandHandler : IRequestHandler<DeleteMetadatFMECACommand>
 {
     private readonly IFMECADetailsRepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
-    private readonly ILogger<DeleteFMECADetailsCommandHandler> _logger;
+    private readonly ILogger<DeleteMetadatFMECACommandHandler> _logger;
 
-    public DeleteFMECADetailsCommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<DeleteFMECADetailsCommandHandler> logger)
+    public DeleteMetadatFMECACommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<DeleteMetadatFMECACommandHandler> logger)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<Unit> Handle(DeleteFMECADetailsCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteMetadatFMECACommand request, CancellationToken cancellationToken)
     {
-        var fmecaToDelete = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAId);
+        var fmecaToDelete = await _fmecaDetailsRepository.GetByIdAsync(request.FMECAID);
         if (fmecaToDelete == null)
         {
-             throw new NotFoundException(nameof(fmecaToDelete), request.FMECAId);
+             throw new NotFoundException(nameof(fmecaToDelete), request.FMECAID);
         }
         await _fmecaDetailsRepository.DeleteAsync(fmecaToDelete);
         _logger.LogInformation($" FMECA {fmecaToDelete.FMECAId} is deleted successfully.");
