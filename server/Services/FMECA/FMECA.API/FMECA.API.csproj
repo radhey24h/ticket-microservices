@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticket.Application\FMECA.Application.csproj" />
-    <ProjectReference Include="..\Ticket.Infrastructure\FMECA.Infrastructure.csproj" />
+    <ProjectReference Include="..\FMECA.Application\FMECA.Application.csproj" />
+    <ProjectReference Include="..\FMECA.Infrastructure\FMECA.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticket.Application\FMECA.Application.csproj" />
+    <ProjectReference Include="..\FMECA.Application\FMECA.Application.csproj" />
   </ItemGroup>
 
 </Project>

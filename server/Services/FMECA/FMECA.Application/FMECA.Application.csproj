@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticket.Domain\FMECA.Domain.csproj" />
+    <ProjectReference Include="..\FMECA.Domain\FMECA.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
