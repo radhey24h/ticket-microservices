@@ -7,11 +7,11 @@ namespace FMECA.Application.Features.MetadataFMECA.Commands.Insert;
 
 public class CreateMetadatFMECACommandHandler : IRequestHandler<CreateMetadatFMECACommand, int>
 {
-    private readonly IFMECADetailsRepository _fmecaDetailsRepository;
+    private readonly IMetadataFMECARepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
     private readonly ILogger<CreateMetadatFMECACommandHandler> _logger;
 
-    public CreateMetadatFMECACommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<CreateMetadatFMECACommandHandler> logger)
+    public CreateMetadatFMECACommandHandler(IMetadataFMECARepository fmecaDetailsRepository, IMapper mapper, ILogger<CreateMetadatFMECACommandHandler> logger)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -22,7 +22,7 @@ public class CreateMetadatFMECACommandHandler : IRequestHandler<CreateMetadatFME
     {
         var fmecaEntity= _mapper.Map<Domain.Entities.MetadataFMECA>(request);
         var newfmecaEntity= await _fmecaDetailsRepository.AddAsync(fmecaEntity);
-        _logger.LogInformation($" New FMECA {newfmecaEntity.FMECAId} is successfully created.");
-        return newfmecaEntity.FMECAId;
+        _logger.LogInformation($" New FMECA {newfmecaEntity.FMECAID} is successfully created.");
+        return newfmecaEntity.FMECAID;
     }
 }

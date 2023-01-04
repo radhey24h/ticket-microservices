@@ -8,11 +8,11 @@ namespace FMECA.Application.Features.MetadataFMECA.Commands.Update;
 
 public class UpdateMetadatFMECACommandHandler : IRequestHandler<UpdateMetadatFMECACommand>
 {
-    private readonly IFMECADetailsRepository _fmecaDetailsRepository;
+    private readonly IMetadataFMECARepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
     private readonly ILogger<UpdateMetadatFMECACommand> _logger;
 
-    public UpdateMetadatFMECACommandHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper, ILogger<UpdateMetadatFMECACommand> logger)
+    public UpdateMetadatFMECACommandHandler(IMetadataFMECARepository fmecaDetailsRepository, IMapper mapper, ILogger<UpdateMetadatFMECACommand> logger)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -29,7 +29,7 @@ public class UpdateMetadatFMECACommandHandler : IRequestHandler<UpdateMetadatFME
 
         _mapper.Map(request, fmecaToUpdate, typeof(UpdateMetadatFMECACommand), typeof(Domain.Entities.MetadataFMECA));
         await _fmecaDetailsRepository.UpdateAsync(fmecaToUpdate);
-        _logger.LogInformation($"Order {fmecaToUpdate.FMECAId} is successfully updated.");
+        _logger.LogInformation($"Order {fmecaToUpdate.FMECAID} is successfully updated.");
         return Unit.Value;
     }
 }

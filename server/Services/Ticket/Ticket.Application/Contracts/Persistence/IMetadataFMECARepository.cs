@@ -7,8 +7,8 @@ using FMECA.Domain.Entities;
 
 namespace FMECA.Application.Contracts.Persistence;
 
-public interface IFMECADetailsRepository : IAsyncRepository<MetadataFMECA>
+public interface IMetadataFMECARepository : IAsyncRepository<MetadataFMECA>
 {
-    Task<IReadOnlyList<MetadataFMECA>> GetFMECAByUserIdAsync(string userId);
+    Task<IReadOnlyList<MetadataFMECA>> GetFMECAByUserIdAsync(int userId);
 }
 

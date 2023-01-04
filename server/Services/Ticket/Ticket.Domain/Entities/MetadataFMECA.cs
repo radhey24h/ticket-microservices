@@ -10,7 +10,7 @@ namespace FMECA.Domain.Entities;
 
 public class MetadataFMECA:Audit
 {
-    public int FMECAId { get; set; }
+    public int FMECAID { get; set; }
     public string FMECAName { get; set; } = string.Empty;
     public string Project { get; set; }=string.Empty;
     public int TopLevelPartNumber { get; set; }

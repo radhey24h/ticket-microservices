@@ -11,9 +11,9 @@ namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllMetadatFMECA;
 
 public class GetAllMetadatFMECAQueryHandler : IRequestHandler<GetAllMetadatFMECAQuery, List<MetadatFMECADTO>>
 {
-    private readonly IFMECADetailsRepository _fmecaDetailsRepository;
+    private readonly IMetadataFMECARepository _fmecaDetailsRepository;
     private readonly IMapper _mapper;
-    public GetAllMetadatFMECAQueryHandler(IFMECADetailsRepository fmecaDetailsRepository, IMapper mapper)
+    public GetAllMetadatFMECAQueryHandler(IMetadataFMECARepository fmecaDetailsRepository, IMapper mapper)
     {
         _fmecaDetailsRepository = fmecaDetailsRepository ?? throw new ArgumentNullException(nameof(fmecaDetailsRepository));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
