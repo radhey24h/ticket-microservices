@@ -53,9 +53,9 @@ public class FMECAReportController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> DeleteMetadatFMECAReport(string id)
+    public async Task<ActionResult> DeleteMetadatFMECAReport(int id)
     {
-        var command = new DeleteFMECAReportCommand() { FMECANumber = id };
+        var command = new DeleteFMECAReportCommand() { ID = id };
         await _mediator.Send(command);
         return NoContent();
     }
