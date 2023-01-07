@@ -22,6 +22,7 @@ public class FMECAContext : DbContext
     public virtual DbSet<DesignFMECA> DesignFMECA { get; set; }
     public virtual DbSet<SafteyFMECA> SafteyFMECA { get; set; }
     public virtual DbSet<ProcessFMECA> ProcessFMECA { get; set; }
+    public virtual DbSet<Report> Report { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
