@@ -10,8 +10,8 @@ public static class InfrastructureServiceRegistration
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<FMECAContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DBConnection")));
+        services.AddEntityFrameworkNpgsql().AddDbContext<FMECAContext>(options =>
+                                            options.UseNpgsql(configuration.GetConnectionString("DBConnection")));
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
         services.AddScoped<IMetadataFMECARepository, MetadataFMECARepository>();

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +10,9 @@ namespace FMECA.Domain.Entities;
 
 public class SystemFMECA : Audit
 {
-
-    public int FMECAId { get; set; }
+    [Key]
+    public int ID { get; set; } 
+    public string? FMECANumber { get; set; }
     public int sequenceId { get; set; }
     public int PartLevel { get; set; }
     public string PartNumber { get; set; } = string.Empty;

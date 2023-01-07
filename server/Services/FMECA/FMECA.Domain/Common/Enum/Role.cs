@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FMECA.Domain.Common.Enum;
-public enum AuditType
+
+public enum Role
 {
-    None = 0,
-    Create = 1,
-    Update = 2,
-    Delete = 3
+
+
+    Anonymous = 0,
+    Administrator = 1,
+    Owner = 2,
+    Contributor = 3
 }

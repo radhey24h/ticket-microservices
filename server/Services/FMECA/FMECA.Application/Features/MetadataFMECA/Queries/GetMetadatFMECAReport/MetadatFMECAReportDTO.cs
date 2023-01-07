@@ -2,7 +2,7 @@
 
 namespace FMECA.Application.Features.MetadataFMECA.Queries.GetAllMetadatFMECA;
 
-public class MetadatFMECADTO
+public class MetadatFMECAReportDTO
 {
     public string FMECANumber { get; set; } = string.Empty;
     public FMECAType FMECAType { get; set; }

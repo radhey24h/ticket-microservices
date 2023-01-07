@@ -8,7 +8,7 @@ namespace FMECA.Domain.Entities;
 
 public class DesignFMECA:Audit
 {
-    public int FMECAId { get; set; }
+    public string FMECANumber { get; set; }
     public int sequenceId { get; set; }
     public int PartLevel { get; set; }
     public string PartNumber { get; set; } = string.Empty;

@@ -17,11 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Function", "Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManagement.API", "Services\FileManagement\FileManagement.API\FileManagement.API.csproj", "{82B16353-A720-4986-AF0D-C02E0B0DC7B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Domain", "Services\FMECA\FMECA.Domain\FMECA.Domain.csproj", "{9D7BAB05-8B3B-428E-AFA9-DAE9229448CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMECA.Domain", "Services\FMECA\FMECA.Domain\FMECA.Domain.csproj", "{9D7BAB05-8B3B-428E-AFA9-DAE9229448CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Application", "Services\FMECA\FMECA.Application\FMECA.Application.csproj", "{843EDE10-8998-42F1-83F2-A5359D7CFA2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMECA.Application", "Services\FMECA\FMECA.Application\FMECA.Application.csproj", "{843EDE10-8998-42F1-83F2-A5359D7CFA2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.Infrastructure", "Services\FMECA\FMECA.Infrastructure\FMECA.Infrastructure.csproj", "{4100AE1D-A02C-494B-9F51-E581B923FA7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMECA.Infrastructure", "Services\FMECA\FMECA.Infrastructure\FMECA.Infrastructure.csproj", "{4100AE1D-A02C-494B-9F51-E581B923FA7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApp", "ConsoleApp", "{3B03CB59-1AC4-4A95-902E-CF0C6EF37CFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.App", "ConsoleApp\Console.App\Console.App.csproj", "{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Service", "Services\Notification\Notification.Service\Notification.Service.csproj", "{879B1AD5-DC74-4839-98D7-B854911B2242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagement.Service", "Services\FileManagement\FileManagement.Service\FileManagement.Service.csproj", "{08122387-1703-4E03-ABA2-B734BBAF6F02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +61,18 @@ Global
 		{4100AE1D-A02C-494B-9F51-E581B923FA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4100AE1D-A02C-494B-9F51-E581B923FA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4100AE1D-A02C-494B-9F51-E581B923FA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879B1AD5-DC74-4839-98D7-B854911B2242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879B1AD5-DC74-4839-98D7-B854911B2242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879B1AD5-DC74-4839-98D7-B854911B2242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879B1AD5-DC74-4839-98D7-B854911B2242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08122387-1703-4E03-ABA2-B734BBAF6F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08122387-1703-4E03-ABA2-B734BBAF6F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08122387-1703-4E03-ABA2-B734BBAF6F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08122387-1703-4E03-ABA2-B734BBAF6F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +87,9 @@ Global
 		{9D7BAB05-8B3B-428E-AFA9-DAE9229448CD} = {76CD9031-C0B6-48E3-AF10-22325AE0CD49}
 		{843EDE10-8998-42F1-83F2-A5359D7CFA2F} = {76CD9031-C0B6-48E3-AF10-22325AE0CD49}
 		{4100AE1D-A02C-494B-9F51-E581B923FA7F} = {76CD9031-C0B6-48E3-AF10-22325AE0CD49}
+		{50BDC2AE-C4D8-449E-8F45-0F903DCCB21B} = {3B03CB59-1AC4-4A95-902E-CF0C6EF37CFF}
+		{879B1AD5-DC74-4839-98D7-B854911B2242} = {7B79916B-7A5E-43AD-BD27-10B12E2E5217}
+		{08122387-1703-4E03-ABA2-B734BBAF6F02} = {29CB6ED9-6655-4E03-B530-FC20973AEFD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEE80D61-9779-4FD8-B630-01F3A13D6EBD}

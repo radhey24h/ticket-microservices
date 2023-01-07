@@ -2,11 +2,10 @@
 using FMECA.Application.Features.MetadataFMECA.Commands.Insert;
 using FMECA.Application.Features.MetadataFMECA.Commands.Update;
 using FMECA.Application.Features.MetadataFMECA.Queries.GetAllMetadatFMECA;
+using FMECA.Application.Features.MetadataFMECA.Queries.GetDashboard;
+using FMECA.Application.Features.MetadataFMECA.Queries.GetMyOpenFMECA;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 using System.Net;
 
 namespace FMECA.API.Controllers;
@@ -16,16 +15,42 @@ namespace FMECA.API.Controllers;
 public class MetadatFMECAController : ControllerBase
 {
     private readonly IMediator _mediator;
-
     public MetadatFMECAController(IMediator mediator)
     {
         _mediator = mediator?? throw new ArgumentNullException(nameof(mediator));
     }
-    [HttpGet("{fmecaID}",Name= "GetAllMetadatFMECA")]
-    [ProducesResponseType(typeof(IEnumerable<MetadatFMECADTO>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<MetadatFMECADTO>>> GetAllMetadatFMECAQuery(string fmecaID)
+
+    [HttpGet(Name = "GetDashboard")]
+    [ProducesResponseType(typeof(IEnumerable<DashboardFMECADTO>), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<IEnumerable<DashboardFMECADTO>>> GetDashboard(string userId)
     {
-        var query = new GetAllMetadatFMECAQuery(fmecaID);
+        var query = new GetDashboardFMECAQuery(userId);
+        var fmeca = await _mediator.Send(query);
+        if (fmeca.Count <= 0)
+        {
+            return NotFound();
+        }
+        return Ok(fmeca);
+    }
+
+    [HttpGet("{userId}", Name= "GetMyOpenFMECA")]
+    [ProducesResponseType(typeof(IEnumerable<MyOpenFMECADTO>), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<IEnumerable<MyOpenFMECADTO>>> GetMyOpenFMECA(string userId)
+    {
+        var query = new GetMyOpenFMECAQuery(userId);
+        var fmeca = await _mediator.Send(query);
+        if (fmeca.Count <= 0)
+        {
+            return NotFound();
+        }
+        return Ok(fmeca);
+    }
+
+    [HttpGet("{userId}", Name = "GetMetadatFMECAReport")]
+    [ProducesResponseType(typeof(IEnumerable<MetadatFMECAReportDTO>), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<IEnumerable<MetadatFMECAReportDTO>>> GetMetadatFMECAReport(string userId)
+    {
+        var query = new GetMetadatFMECAReportQuery(userId);
         var fmeca = await _mediator.Send(query);
         if (fmeca.Count <= 0)
         {
@@ -62,6 +87,4 @@ public class MetadatFMECAController : ControllerBase
         await _mediator.Send(command);
         return NoContent();
     }
-
-
 }
