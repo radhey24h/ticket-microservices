@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace FMECA.Application.Features.FMECAReport.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
 
 public class GetFMECAReportQuery : IRequest<List<FMECAReportDTO>>
 {

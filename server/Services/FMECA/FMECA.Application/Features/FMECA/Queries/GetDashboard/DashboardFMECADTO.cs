@@ -1,6 +1,4 @@
-﻿using FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
-using FMECA.Application.Features.FMECA.Queries.GetMyOpenFMECA;
-using FMECA.Domain.Common.Enum;
+﻿using FMECA.Application.Features.FMECA.Queries.GetMyOpenFMECA;
 
 namespace FMECA.Application.Features.FMECA.Queries.GetDashboard;
 

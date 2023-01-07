@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using FMECA.Application.Features.FMECA.Commands.Insert;
 using FMECA.Application.Features.FMECA.Commands.Update;
-using FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
 using FMECA.Application.Features.FMECA.Queries.GetMyOpenFMECA;
 using FMECA.Application.Features.FMECAReport.Commands.Insert;
 using FMECA.Application.Features.FMECAReport.Commands.Update;
+using FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
 using DOMAIN=FMECA.Domain.Entities;
 
 namespace FMECA.Application.Mappings;

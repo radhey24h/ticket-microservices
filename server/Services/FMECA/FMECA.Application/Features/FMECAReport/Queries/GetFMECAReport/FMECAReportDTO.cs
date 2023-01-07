@@ -1,6 +1,6 @@
 ﻿using FMECA.Domain.Common.Enum;
 
-namespace FMECA.Application.Features.FMECAReport.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
 
 public class FMECAReportDTO
 {

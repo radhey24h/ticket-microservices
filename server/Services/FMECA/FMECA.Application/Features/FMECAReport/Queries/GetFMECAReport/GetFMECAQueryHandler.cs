@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FMECA.Application.Contracts.Persistence;
 
-namespace FMECA.Application.Features.FMECAReport.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
 
 public class GetFMECAQueryHandler : IRequestHandler<GetFMECAReportQuery, List<FMECAReportDTO>>
 {

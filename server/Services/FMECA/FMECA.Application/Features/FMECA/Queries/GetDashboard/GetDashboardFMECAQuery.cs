@@ -1,7 +1,7 @@
 ﻿using FMECA.Application.Features.FMECA.Queries.GetDashboard;
 using MediatR;
 
-namespace FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECA.Queries.GetDashboard;
 
 public class GetDashboardFMECAQuery : IRequest<List<DashboardFMECADTO>>
 {

@@ -1,8 +1,8 @@
 ﻿using FMECA.Domain.Common.Enum;
 
-namespace FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECA.Queries.GetAllFMECA;
 
-public class FMECAReportDTO
+public class FMECADTO
 {
     public string FMECANumber { get; set; } = string.Empty;
     public FMECAType FMECAType { get; set; }

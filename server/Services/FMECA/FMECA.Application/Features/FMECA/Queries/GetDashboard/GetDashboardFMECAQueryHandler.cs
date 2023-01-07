@@ -1,14 +1,8 @@
 ﻿using AutoMapper;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FMECA.Application.Contracts.Persistence;
-using FMECA.Application.Features.FMECA.Queries.GetDashboard;
+using MediatR;
 
-namespace FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
+namespace FMECA.Application.Features.FMECA.Queries.GetDashboard;
 
 public class GetDashboardFMECAQueryHandler : IRequestHandler<GetDashboardFMECAQuery, List<DashboardFMECADTO>>
 {

@@ -1,7 +1,7 @@
-﻿using FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
-using FMECA.Application.Features.FMECAReport.Commands.Delete;
+﻿using FMECA.Application.Features.FMECAReport.Commands.Delete;
 using FMECA.Application.Features.FMECAReport.Commands.Insert;
 using FMECA.Application.Features.FMECAReport.Commands.Update;
+using FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -18,9 +18,9 @@ public class FMECAReportController : ControllerBase
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
-    [HttpGet("{userId}", Name = "GetMetadatFMECAReport")]
+    [HttpGet("{userId}", Name = "GetFMECAReport")]
     [ProducesResponseType(typeof(IEnumerable<FMECAReportDTO>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<FMECAReportDTO>>> GetMetadatFMECAReport(string userId)
+    public async Task<ActionResult<IEnumerable<FMECAReportDTO>>> GetFMECAReport(string userId)
     {
         var query = new GetFMECAReportQuery(userId);
         var fmeca = await _mediator.Send(query);
@@ -31,29 +31,29 @@ public class FMECAReportController : ControllerBase
         return Ok(fmeca);
     }
 
-    [HttpPost(Name = "CreateMetadatFMECAReport")]
+    [HttpPost(Name = "CreateFMECAReport")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
-    public async Task<ActionResult<int>> CreateMetadatFMECAReport([FromBody] CreateFMECAReportCommand command)
+    public async Task<ActionResult<int>> CreateFMECAReport([FromBody] CreateFMECAReportCommand command)
     {
         var result = await _mediator.Send(command);
         return Ok(result);
     }
 
-    [HttpPut(Name = "UpdateMetadatFMECAReport")]
+    [HttpPut(Name = "UpdateFMECAReport")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> UpdateMetadatFMECAReport([FromBody] UpdateFMECAReportCommand command)
+    public async Task<ActionResult> UpdateFMECAReport([FromBody] UpdateFMECAReportCommand command)
     {
         await _mediator.Send(command);
         return NoContent();
     }
 
-    [HttpDelete("{id}", Name = "DeleteMetadatFMECAReport")]
+    [HttpDelete("{id}", Name = "DeleteFMECAReport")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> DeleteMetadatFMECAReport(int id)
+    public async Task<ActionResult> DeleteFMECAReport(int id)
     {
         var command = new DeleteFMECAReportCommand() { ID = id };
         await _mediator.Send(command);

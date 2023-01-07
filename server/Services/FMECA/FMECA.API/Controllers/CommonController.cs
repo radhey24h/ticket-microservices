@@ -1,6 +1,4 @@
-﻿using FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
-using FMECA.Application.Features.FMECA.Queries.GetDashboard;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

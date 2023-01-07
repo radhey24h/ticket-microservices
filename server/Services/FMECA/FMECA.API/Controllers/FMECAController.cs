@@ -1,7 +1,6 @@
 ﻿using FMECA.Application.Features.FMECA.Commands.Delete;
 using FMECA.Application.Features.FMECA.Commands.Insert;
 using FMECA.Application.Features.FMECA.Commands.Update;
-using FMECA.Application.Features.FMECA.Queries.GetAllMetadatFMECA;
 using FMECA.Application.Features.FMECA.Queries.GetDashboard;
 using FMECA.Application.Features.FMECA.Queries.GetMyOpenFMECA;
 using MediatR;
@@ -47,29 +46,29 @@ public class FMECAController : ControllerBase
     }
 
 
-    [HttpPost(Name = "CreateMetadatFMECA")]
+    [HttpPost(Name = "CreateFMECA")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
-    public async Task<ActionResult<int>> CreateMetadatFMECA([FromBody] CreateFMECACommand command)
+    public async Task<ActionResult<int>> CreateFMECA([FromBody] CreateFMECACommand command)
     {
         var result = await _mediator.Send(command);
         return Ok(result);
     }
 
-    [HttpPut(Name = "UpdateMetadatFMECA")]
+    [HttpPut(Name = "UpdateFMECA")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> UpdateMetadatFMECA([FromBody] UpdateFMECACommand command)
+    public async Task<ActionResult> UpdateFMECA([FromBody] UpdateFMECACommand command)
     {
         await _mediator.Send(command);
         return NoContent();
     }
 
-    [HttpDelete("{id}", Name = "DeleteMetadatFMECA")]
+    [HttpDelete("{id}", Name = "DeleteFMECA")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> DeleteMetadatFMECA(string id)
+    public async Task<ActionResult> DeleteFMECA(string id)
     {
         var command = new DeleteFMECACommand() { FMECANumber = id };
         await _mediator.Send(command);
