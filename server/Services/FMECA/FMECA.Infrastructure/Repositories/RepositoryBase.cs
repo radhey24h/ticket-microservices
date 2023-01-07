@@ -57,11 +57,14 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : Audit
         return await query.ToListAsync();
     }
 
-    public virtual async Task<T> GetByIdAsync(string id)
+    public virtual async Task<T> GetByIdAsync(int id)
     {
         return await _dbContext.Set<T>().FindAsync(id);
     }
-
+    public virtual async Task<T> GetByFMECANumberAsync(string id)
+    {
+        return await _dbContext.Set<T>().FindAsync(id);
+    }
     public async Task<T> AddAsync(T entity)
     {
         _dbContext.Set<T>().Add(entity);

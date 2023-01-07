@@ -1,4 +1,4 @@
-﻿using FMECA.Domain.Entities;
+﻿using DOMAIN=FMECA.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,19 +12,19 @@ public class FMECAContextSeed
 {
     public static async Task SeedAsync(FMECAContext fmecaContext, ILogger<FMECAContextSeed> logger)
     {
-        if (!fmecaContext.MetadataFMECA.Any())
+        if (!fmecaContext.FMECA.Any())
         {
-            fmecaContext.MetadataFMECA.AddRange(GetPreconfiguredFMECA());
+            fmecaContext.FMECA.AddRange(GetPreconfiguredFMECA());
             await fmecaContext.SaveChangesAsync();
-            logger.LogInformation("Seed database associated with context {DbContextName}", typeof(MetadataFMECA).Name);
+            logger.LogInformation("Seed database associated with context {DbContextName}", typeof(DOMAIN.FMECA).Name);
         }
     }
 
-    private static IEnumerable<MetadataFMECA> GetPreconfiguredFMECA()
+    private static IEnumerable<DOMAIN.FMECA> GetPreconfiguredFMECA()
     {
-        return new List<MetadataFMECA>
+        return new List<DOMAIN.FMECA>
             {
-                new MetadataFMECA() {}
+                new DOMAIN.FMECA() {}
             };
     }
 }

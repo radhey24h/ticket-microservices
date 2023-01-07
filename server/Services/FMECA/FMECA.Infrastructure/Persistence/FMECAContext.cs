@@ -8,7 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using DOMAIN=FMECA.Domain.Entities;
 namespace FMECA.Infrastructure.Persistence;
 
 public class FMECAContext : DbContext
@@ -17,33 +17,33 @@ public class FMECAContext : DbContext
     {
     }
 
-    public virtual DbSet<MetadataFMECA> MetadataFMECA { get; set; }
+    public virtual DbSet<DOMAIN.FMECA> FMECA { get; set; }
     public virtual DbSet<SystemFMECA> SystemFMECA { get; set; }
     public virtual DbSet<DesignFMECA> DesignFMECA { get; set; }
     public virtual DbSet<SafteyFMECA> SafteyFMECA { get; set; }
     public virtual DbSet<ProcessFMECA> ProcessFMECA { get; set; }
-    public virtual DbSet<Report> Report { get; set; }
+    public virtual DbSet<FMECAReport> Report { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<MetadataFMECA>()
+        modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.FMECAStatus)
            .HasConversion<string>()
            .HasMaxLength(200);
 
-        modelBuilder.Entity<MetadataFMECA>()
+        modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.FMECAType)
            .HasConversion<string>()
            .HasMaxLength(200);
 
-        modelBuilder.Entity<MetadataFMECA>()
+        modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.ProcessFMECAType)
            .HasConversion<string>()
            .HasMaxLength(200);
 
-        modelBuilder.Entity<MetadataFMECA>(entity =>
+        modelBuilder.Entity<DOMAIN.FMECA>(entity =>
         {
             entity.HasMany(y => y.SystemFMECA);
             entity.HasMany(y => y.DesignFMECA);

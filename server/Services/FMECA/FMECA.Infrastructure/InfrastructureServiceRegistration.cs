@@ -14,7 +14,7 @@ public static class InfrastructureServiceRegistration
                                             options.UseNpgsql(configuration.GetConnectionString("DBConnection")));
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-        services.AddScoped<IMetadataFMECARepository, MetadataFMECARepository>();
+        services.AddScoped<IFMECARepository, FMECARepository>();
 
 
         return services;
