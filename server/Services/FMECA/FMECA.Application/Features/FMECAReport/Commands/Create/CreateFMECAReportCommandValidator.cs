@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace FMECA.Application.Features.FMECAReport.Commands.Insert;
+namespace FMECA.Application.Features.FMECAReport.Commands.Create;
 public class CreateFMECAReportCommandValidator : AbstractValidator<CreateFMECAReportCommand>
 {
     public CreateFMECAReportCommandValidator()

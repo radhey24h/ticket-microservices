@@ -1,7 +1,7 @@
-﻿using FMECA.Application.Features.FMECAReport.Commands.Delete;
-using FMECA.Application.Features.FMECAReport.Commands.Insert;
+﻿using FMECA.Application.Features.FMECAReport.Commands.Create;
+using FMECA.Application.Features.FMECAReport.Commands.Delete;
 using FMECA.Application.Features.FMECAReport.Commands.Update;
-using FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
+using FMECA.Application.Features.FMECAReport.Queries.GetFMECAReport;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

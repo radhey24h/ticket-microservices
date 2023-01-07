@@ -24,7 +24,7 @@ public class DeleteFMECAReportCommandHandler : IRequestHandler<DeleteFMECAReport
         var fmecaReportToDelete = await _fmecaDetailsReportRepository.GetByIdAsync(request.ID);
         if (fmecaReportToDelete == null)
         {
-             throw new NotFoundException(nameof(fmecaReportToDelete), request.ID);
+            throw new NotFoundException(nameof(fmecaReportToDelete), request.ID);
         }
         await _fmecaDetailsReportRepository.DeleteAsync(fmecaReportToDelete);
         _logger.LogInformation($" FMECA {fmecaReportToDelete.ReportName} is deleted successfully.");

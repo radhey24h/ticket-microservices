@@ -1,8 +1,6 @@
-﻿using FMECA.Domain.Common.Enum;
-using MediatR;
-using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
 
-namespace FMECA.Application.Features.FMECAReport.Commands.Insert;
+namespace FMECA.Application.Features.FMECAReport.Commands.Create;
 
 public class CreateFMECAReportCommand : IRequest<string>
 {
@@ -10,5 +8,4 @@ public class CreateFMECAReportCommand : IRequest<string>
     public string userID { get; set; } = default!;
     public string ReportName { get; set; } = default!;
     public bool IsDefault { get; set; }
-    public List<string> ReportColumn { get; set; }
 }

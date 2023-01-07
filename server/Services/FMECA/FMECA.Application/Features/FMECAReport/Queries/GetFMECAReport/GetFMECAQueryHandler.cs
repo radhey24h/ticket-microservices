@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FMECA.Application.Contracts.Persistence;
+using MediatR;
 
-namespace FMECA.Application.Features.FMECAReport.Queries.GetAllFMECAReport;
+namespace FMECA.Application.Features.FMECAReport.Queries.GetFMECAReport;
 
 public class GetFMECAQueryHandler : IRequestHandler<GetFMECAReportQuery, List<FMECAReportDTO>>
 {

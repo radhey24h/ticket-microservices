@@ -3,7 +3,7 @@ using FMECA.Application.Contracts.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using FMECA.Domain.Entities;
-namespace FMECA.Application.Features.FMECAReport.Commands.Insert;
+namespace FMECA.Application.Features.FMECAReport.Commands.Create;
 
 public class CreateFMECAReportCommandHandler : IRequestHandler<CreateFMECAReportCommand, string>
 {
@@ -20,9 +20,9 @@ public class CreateFMECAReportCommandHandler : IRequestHandler<CreateFMECAReport
 
     public async Task<string> Handle(CreateFMECAReportCommand request, CancellationToken cancellationToken)
     {
-        var fmecaEntity= _mapper.Map<Domain.Entities.FMECAReport>(request);
-        var newfmecaEntity= await _fmecaReportRepository.AddAsync(fmecaEntity);
-        _logger.LogInformation($" New FMECA {newfmecaEntity.FMECANumber} is successfully created.");
-        return newfmecaEntity.FMECANumber;
+        var fmecaEntity = _mapper.Map<Domain.Entities.FMECAReport>(request);
+        var newfmecaEntity = await _fmecaReportRepository.AddAsync(fmecaEntity);
+        _logger.LogInformation($" New FMECA Report {newfmecaEntity.ReportName} is successfully created.");
+        return newfmecaEntity.ReportName;
     }
 }

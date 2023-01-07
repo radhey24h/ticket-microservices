@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FMECA.Application.Contracts.Persistence;
 using FMECA.Application.Exceptions;
-using FMECA.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;
 namespace FMECA.Application.Features.FMECAReport.Commands.Update;
@@ -24,12 +23,12 @@ public class UpdateFMECAReportCommandHandler : IRequestHandler<UpdateFMECAReport
         var fmecaToUpdate = await _fmecaReportRepository.GetByIdAsync(request.ID);
         if (fmecaToUpdate == null)
         {
-            throw new NotFoundException(nameof(Domain.Entities.FMECA), request.ID);
+            throw new NotFoundException(nameof(Domain.Entities.FMECAReport), request.ID);
         }
 
-        _mapper.Map(request, fmecaToUpdate, typeof(UpdateFMECAReportCommand), typeof(Domain.Entities.FMECA));
+        _mapper.Map(request, fmecaToUpdate, typeof(UpdateFMECAReportCommand), typeof(Domain.Entities.FMECAReport));
         await _fmecaReportRepository.UpdateAsync(fmecaToUpdate);
-        _logger.LogInformation($"Order {fmecaToUpdate.FMECANumber} is successfully updated.");
+        _logger.LogInformation($"Order {fmecaToUpdate.ReportName} is successfully updated.");
         return Unit.Value;
     }
 }

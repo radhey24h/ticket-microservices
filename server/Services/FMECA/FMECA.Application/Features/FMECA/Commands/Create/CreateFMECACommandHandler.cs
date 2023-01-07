@@ -3,7 +3,7 @@ using FMECA.Application.Contracts.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using FMECA.Domain.Entities;
-namespace FMECA.Application.Features.FMECA.Commands.Insert;
+namespace FMECA.Application.Features.FMECA.Commands.Create;
 
 public class CreateFMECACommandHandler : IRequestHandler<CreateFMECACommand, string>
 {

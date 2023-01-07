@@ -1,5 +1,4 @@
-﻿using FMECA.Domain.Common.Enum;
-using MediatR;
+﻿using MediatR;
 
 namespace FMECA.Application.Features.FMECAReport.Commands.Update;
 
@@ -9,5 +8,4 @@ public class UpdateFMECAReportCommand : IRequest
     public string userID { get; set; } = default!;
     public string ReportName { get; set; } = default!;
     public bool IsDefault { get; set; }
-    public List<string> ReportColumn { get; set; }
 }

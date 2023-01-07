@@ -1,5 +1,5 @@
 ﻿using FMECA.Application.Features.FMECA.Commands.Delete;
-using FMECA.Application.Features.FMECA.Commands.Insert;
+using FMECA.Application.Features.FMECA.Commands.Create;
 using FMECA.Application.Features.FMECA.Commands.Update;
 using FMECA.Application.Features.FMECA.Queries.GetDashboard;
 using FMECA.Application.Features.FMECA.Queries.GetMyOpenFMECA;

@@ -2,7 +2,7 @@
 using MediatR;
 using System.ComponentModel.DataAnnotations;
 
-namespace FMECA.Application.Features.FMECA.Commands.Insert;
+namespace FMECA.Application.Features.FMECA.Commands.Create;
 
 public class CreateFMECACommand : IRequest<string>
 {
