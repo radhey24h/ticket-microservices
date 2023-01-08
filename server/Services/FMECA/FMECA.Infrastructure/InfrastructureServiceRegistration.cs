@@ -15,6 +15,7 @@ public static class InfrastructureServiceRegistration
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
         services.AddScoped<IFMECARepository, FMECARepository>();
+        services.AddScoped<IFMECAReportRepository, FMECAReportRepository>();
 
 
         return services;
