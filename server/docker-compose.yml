@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  portainer:
+    image: portainer/portainer-ce
+
+  fmecadb:
+    image: postgres
+  
+  fmeca.api:
+    image: ${DOCKER_REGISTRY-}fmecaapi
+    build:
+      context: .
+      dockerfile: Services/FMECA/FMECA.API/Dockerfile
+
+volumes:
+  portainer_data:
+  postgres_data:

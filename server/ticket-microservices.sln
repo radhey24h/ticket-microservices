@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Service", "Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManagement.Service", "Services\FileManagement\FileManagement.Service\FileManagement.Service.csproj", "{08122387-1703-4E03-ABA2-B734BBAF6F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMECA.APITests", "Services\FMECA\FMECA.APITests\FMECA.APITests.csproj", "{C4BA2D5D-4607-425B-A0D0-952428574547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FMECA.APITests", "Services\FMECA\FMECA.APITests\FMECA.APITests.csproj", "{C4BA2D5D-4607-425B-A0D0-952428574547}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F8CC4AB4-497F-4CC1-8743-D9EE06BFC1E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{C4BA2D5D-4607-425B-A0D0-952428574547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4BA2D5D-4607-425B-A0D0-952428574547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4BA2D5D-4607-425B-A0D0-952428574547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CC4AB4-497F-4CC1-8743-D9EE06BFC1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CC4AB4-497F-4CC1-8743-D9EE06BFC1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CC4AB4-497F-4CC1-8743-D9EE06BFC1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CC4AB4-497F-4CC1-8743-D9EE06BFC1E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
