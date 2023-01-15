@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FMECA.Infrastructure.Migrations
 {
     [DbContext(typeof(FMECAContext))]
-    [Migration("20230115095120_IntialSetup")]
-    partial class IntialSetup
+    [Migration("20230115130638_InitialFMECAMigration")]
+    partial class InitialFMECAMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

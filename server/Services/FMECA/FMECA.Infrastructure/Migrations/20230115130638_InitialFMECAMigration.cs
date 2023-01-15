@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FMECA.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class IntialSetup : Migration
+    public partial class InitialFMECAMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
