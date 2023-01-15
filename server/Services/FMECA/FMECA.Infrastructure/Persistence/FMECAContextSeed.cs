@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FMECA.Domain.Common.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace FMECA.Infrastructure.Persistence;
 
@@ -24,7 +26,21 @@ public class FMECAContextSeed
     {
         return new List<DOMAIN.FMECA>
             {
-                new DOMAIN.FMECA() {}
+                new DOMAIN.FMECA() { ID=123, 
+                                    FMECANumber= "SY123",
+                                    RefrenceFMECANumber=null,
+                                    IsCriticalRisk=false,
+                                    FMECAType =FMECAType.System,
+                                    FMECAStatus =FMECAStatus.AssessmentUnderWay,
+                                    TopLevelPartNumber="TopLevelPartNumber",
+                                    TopLevelPartDescription="TopLevelPartDescription",
+                                    ProcessName="ProcessName",
+                                    Owner="Owner",
+                                    Attachments="Attachments",
+                                    ProjectID="ProjectID",
+                                    ProjectName="ProjectName",
+                                    ProcessFMECAType=ProcessFMECAType.Electric
+                                }
             };
     }
 }

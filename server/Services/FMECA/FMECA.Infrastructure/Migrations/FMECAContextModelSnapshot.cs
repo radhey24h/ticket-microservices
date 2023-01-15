@@ -26,8 +26,11 @@ namespace FMECA.Infrastructure.Migrations
             modelBuilder.Entity("FMECA.Domain.Entities.FMECA", b =>
                 {
                     b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
                     b.Property<string>("FMECANumber")
                         .HasColumnType("text")
@@ -155,8 +158,11 @@ namespace FMECA.Infrastructure.Migrations
             modelBuilder.Entity("FMECA.Domain.Entities.PartRiskColumnDefinition", b =>
                 {
                     b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
                     b.Property<string>("ColumnName")
                         .HasColumnType("text")

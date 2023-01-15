@@ -1,6 +1,6 @@
 ﻿using FMECA.Domain.Entities;
-using FMECA.Infrastructure.DbInitialize;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using DOMAIN = FMECA.Domain.Entities;
 namespace FMECA.Infrastructure.Persistence;
 
@@ -47,7 +47,7 @@ public class FMECAContext : DbContext
             entity.HasMany(y => y.PartRisk);
             entity.HasMany(y => y.ProcessRisk);
         });
-        new DbInitializer(modelBuilder).Seed();
+       
     }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

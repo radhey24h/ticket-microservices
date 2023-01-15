@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FMECA.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class IntialCreate : Migration
+    public partial class IntialSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,8 @@ namespace FMECA.Infrastructure.Migrations
                 name: "FMECA",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "integer", nullable: false),
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FMECANumber = table.Column<string>(type: "text", nullable: false),
                     RefrenceFMECANumber = table.Column<string>(type: "text", nullable: true),
                     IsCriticalRisk = table.Column<bool>(type: "boolean", nullable: false),
@@ -56,7 +57,8 @@ namespace FMECA.Infrastructure.Migrations
                 name: "PartRiskColumnDefinition",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "integer", nullable: false),
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ColumnName = table.Column<string>(type: "text", nullable: false),
                     FMECAType = table.Column<int>(type: "integer", nullable: false),
                     Header = table.Column<string>(type: "text", nullable: false),

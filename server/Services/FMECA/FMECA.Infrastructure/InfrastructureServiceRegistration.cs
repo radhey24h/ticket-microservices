@@ -1,5 +1,4 @@
 ﻿using FMECA.Application.Contracts.Persistence;
-using FMECA.Infrastructure.DbInitialize;
 using FMECA.Infrastructure.Persistence;
 using FMECA.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
