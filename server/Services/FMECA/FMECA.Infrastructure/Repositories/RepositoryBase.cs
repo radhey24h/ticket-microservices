@@ -1,5 +1,6 @@
 ﻿using FMECA.Application.Contracts.Persistence;
 using FMECA.Domain.Common;
+using FMECA.Domain.Entities;
 using FMECA.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FMECA.Infrastructure.Repositories;
 
-public class RepositoryBase<T> : IAsyncRepository<T> where T : Audit
+public class RepositoryBase<T> : IAsyncRepository<T> where T : Entity
 {
     protected readonly FMECAContext _dbContext;
 

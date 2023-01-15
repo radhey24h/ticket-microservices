@@ -2,7 +2,7 @@
 using FMECA.Domain.Common;
 
 namespace FMECA.Application.Contracts.Persistence;
-public interface IAsyncRepository<T> where T : Audit
+public interface IAsyncRepository<T> where T : Entity
 {
     Task<IReadOnlyList<T>> GetAllAsync();
     Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate);

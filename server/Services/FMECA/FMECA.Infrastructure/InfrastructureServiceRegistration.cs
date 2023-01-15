@@ -1,4 +1,5 @@
 ﻿using FMECA.Application.Contracts.Persistence;
+using FMECA.Infrastructure.DbInitialize;
 using FMECA.Infrastructure.Persistence;
 using FMECA.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ public static class InfrastructureServiceRegistration
     {
         services.AddEntityFrameworkNpgsql().AddDbContext<FMECAContext>(options =>
                                             options.UseNpgsql(configuration.GetConnectionString("DBConnection")));
+        //services.AddScoped<IDbInitializer, DbInitializer>();
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
         services.AddScoped<IFMECARepository, FMECARepository>();

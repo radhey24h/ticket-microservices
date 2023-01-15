@@ -1,14 +1,7 @@
-﻿using FMECA.Domain.Common;
-using FMECA.Domain.Common.Enum;
-using FMECA.Domain.Entities;
+﻿using FMECA.Domain.Entities;
+using FMECA.Infrastructure.DbInitialize;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using DOMAIN=FMECA.Domain.Entities;
+using DOMAIN = FMECA.Domain.Entities;
 namespace FMECA.Infrastructure.Persistence;
 
 public class FMECAContext : DbContext
@@ -18,10 +11,10 @@ public class FMECAContext : DbContext
     }
 
     public virtual DbSet<DOMAIN.FMECA> FMECA { get; set; }
-    public virtual DbSet<SystemFMECA> SystemFMECA { get; set; }
-    public virtual DbSet<DesignFMECA> DesignFMECA { get; set; }
-    public virtual DbSet<SafteyFMECA> SafteyFMECA { get; set; }
-    public virtual DbSet<ProcessFMECA> ProcessFMECA { get; set; }
+    public virtual DbSet<PartRisk> PartRisk { get; set; }
+    public virtual DbSet<PartRiskColumnDefinition> PartRiskColumnDefinition { get; set; }
+    
+    public virtual DbSet<ProcessRisk> ProcessRisk { get; set; }
     public virtual DbSet<FMECAReport> FMECAReport { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,27 +22,32 @@ public class FMECAContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<DOMAIN.FMECA>()
+          .HasKey(x => new { x.ID, x.FMECANumber });
+
+        modelBuilder.Entity<DOMAIN.PartRiskColumnDefinition>()
+          .HasKey(x => new { x.ID, x.ColumnName, x.FMECAType });
+
+        modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.FMECAStatus)
-           .HasConversion<string>()
-           .HasMaxLength(200);
+           .HasConversion<int>()
+           .IsRequired();
 
         modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.FMECAType)
-           .HasConversion<string>()
-           .HasMaxLength(200);
+           .HasConversion<int>()
+           .IsRequired();
 
         modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.ProcessFMECAType)
-           .HasConversion<string>()
-           .HasMaxLength(200);
+           .HasConversion<int>()
+           .IsRequired();
 
         modelBuilder.Entity<DOMAIN.FMECA>(entity =>
         {
-            entity.HasMany(y => y.SystemFMECA);
-            entity.HasMany(y => y.DesignFMECA);
-            entity.HasMany(y => y.SafteyFMECA);
-            entity.HasMany(y => y.ProcessFMECA);
+            entity.HasMany(y => y.PartRisk);
+            entity.HasMany(y => y.ProcessRisk);
         });
+        new DbInitializer(modelBuilder).Seed();
     }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

@@ -1,9 +1,9 @@
-﻿using DOMAIN = FMECA.Domain.Entities;
+﻿using Entity = FMECA.Domain.Entities;
 
 namespace FMECA.Application.Contracts.Persistence;
 
-public interface IFMECARepository : IAsyncRepository<DOMAIN.FMECA>
+public interface IFMECARepository : IAsyncRepository<Entity.FMECA>
 {
-    Task<IReadOnlyList<DOMAIN.FMECA>> GetFMECAByUserNameAsync(string userName);
+    Task<IReadOnlyList<Entity.FMECA>> GetFMECAByUserNameAsync(string userName);
 }
 

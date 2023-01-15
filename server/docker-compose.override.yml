@@ -17,7 +17,7 @@ services:
     container_name: fmeca.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - 'ConnectionStrings:DBConnection=User ID=admin;password=admin1234;Server=localhost;port=5432;Database=FMECADB;Integrated Security=true;Pooling=true;'
+      - 'ConnectionStrings:DBConnection=User ID=admin;password=admin@123;Server=localhost;port=5432;Database=FMECADB;Integrated Security=true;Pooling=true;'
     depends_on:
       - fmecadb
     ports:

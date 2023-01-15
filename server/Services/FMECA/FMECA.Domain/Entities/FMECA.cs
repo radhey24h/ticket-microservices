@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FMECA.Domain.Common;
+﻿using FMECA.Domain.Common;
 using FMECA.Domain.Common.Enum;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FMECA.Domain.Entities;
 
-public class FMECA:Audit
+public class FMECA : Entity
 {
     public FMECA()
     {
-        SystemFMECA = new HashSet<SystemFMECA>();
-        DesignFMECA = new HashSet<DesignFMECA>();
-        SafteyFMECA = new HashSet<SafteyFMECA>();
-        ProcessFMECA = new HashSet<ProcessFMECA>();
+        PartRisk = new HashSet<PartRisk>();
+        ProcessRisk = new HashSet<ProcessRisk>();
     }
-
-    [Key]
+    [Key, Column(Order = 1)]
     public string FMECANumber { get; set; } = default!;
     public string? RefrenceFMECANumber { get; set; }
     public bool IsCriticalRisk { get; set; } = false;
@@ -36,8 +29,6 @@ public class FMECA:Audit
     public string ProjectName { get; set; } = string.Empty;
     public ProcessFMECAType ProcessFMECAType { get; set; }
 
-    public virtual ICollection<SystemFMECA> SystemFMECA { get; set; }
-    public virtual ICollection<DesignFMECA> DesignFMECA { get; set; }
-    public virtual ICollection<SafteyFMECA> SafteyFMECA { get; set; }
-    public virtual ICollection<ProcessFMECA> ProcessFMECA { get; set; }
+    public virtual ICollection<PartRisk> PartRisk { get; set; }
+    public virtual ICollection<ProcessRisk> ProcessRisk { get; set; }
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FMECA.Domain.Common;
+namespace FMECA.Domain.Entities;
 
-namespace FMECA.Domain.Common;
-
-public abstract class Audit
+public abstract class Audit : Entity
 {
-    public int Id { get; protected set; }
     public string FMECANumber { get; set; } = default!;
     public string UserId { get; set; } = default!;
     public string Type { get; set; } = string.Empty;
