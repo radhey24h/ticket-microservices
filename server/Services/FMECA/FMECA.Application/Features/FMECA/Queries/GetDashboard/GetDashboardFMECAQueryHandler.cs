@@ -25,6 +25,7 @@ public class GetDashboardFMECAQueryHandler : IRequestHandler<GetDashboardFMECAQu
         return new DashboardFMECADTO()
         {
             TotalFMECATypeCount = GetTotalFMECATypeCount(fmecaList),
+            TotalFMECATypeCountOne = GetTotalFMECATypeCountOne(fmecaList),
             TotalFMECAStatus = GetTotalFMECAStatus(fmecaList),
             MyOpenFMECA = _mapper.Map<IEnumerable<MyOpenFMECADTO>>(fmecaList)
         };
@@ -40,6 +41,12 @@ public class GetDashboardFMECAQueryHandler : IRequestHandler<GetDashboardFMECAQu
                        g.Key.ProcessFMECAType,
                        count = g.Count()
                    });
+    }
+    private Dictionary<Tuple<string, string>, int> GetTotalFMECATypeCountOne(IReadOnlyList<Domain.Entities.FMECA> fmecaList)
+    {
+        return fmecaList.GroupBy(x => Tuple.Create(x.FMECAType, x.ProcessFMECAType))
+               .ToDictionary(g => g.Key, g => g.Count());
+
     }
     private dynamic GetTotalFMECAStatus(IReadOnlyList<Domain.Entities.FMECA> fmecaList)
     {

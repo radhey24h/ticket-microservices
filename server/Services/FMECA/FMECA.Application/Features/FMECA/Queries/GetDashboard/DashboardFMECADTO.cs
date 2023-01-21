@@ -8,4 +8,5 @@ public class DashboardFMECADTO
     public dynamic TotalFMECATypeCount { get; set; }
     public dynamic TotalFMECAStatus { get; set; }
     public IEnumerable<MyOpenFMECADTO> MyOpenFMECA { get; set; }
+    public Dictionary<Tuple<string, string>, int> TotalFMECATypeCountOne { get;  set; }
 }
