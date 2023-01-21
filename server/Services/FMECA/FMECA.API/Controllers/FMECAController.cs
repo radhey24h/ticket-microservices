@@ -10,7 +10,7 @@ using System.Net;
 namespace FMECA.API.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/v1/[action]")]
 public class FMECAController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -21,11 +21,11 @@ public class FMECAController : ControllerBase
 
     [HttpGet(Name = "GetDashboard")]
     [ProducesResponseType(typeof(IEnumerable<DashboardFMECADTO>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<DashboardFMECADTO>>> GetDashboard(string userId)
+    public async Task<ActionResult<DashboardFMECADTO>> GetDashboard(string userId)
     {
         var query = new GetDashboardFMECAQuery(userId);
         var fmeca = await _mediator.Send(query);
-        if (fmeca.Count <= 0)
+        if (fmeca == null)
         {
             return NotFound();
         }

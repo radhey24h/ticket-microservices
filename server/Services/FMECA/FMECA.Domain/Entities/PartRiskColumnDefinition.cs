@@ -12,9 +12,10 @@ namespace FMECA.Domain.Entities;
 
 public class PartRiskColumnDefinition : Entity
 {
-    [Key, Column(Order = 1)]
+    [Required]
     public string ColumnName { get; set; } = default!;
-    [Key, Column(Order = 2)]
+
+    [Required]
     public FMECAType FMECAType { get; set; } = default!;
     public string Header { get; set; } = default!;
     public string DataType { get; set; } = default!;

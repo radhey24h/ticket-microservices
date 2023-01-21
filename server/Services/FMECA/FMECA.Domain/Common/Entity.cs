@@ -7,5 +7,5 @@ public class Entity
 {
     [Key, Column(Order = 0)]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int ID { get; set; }
+    public long ID { get; set; }
 }

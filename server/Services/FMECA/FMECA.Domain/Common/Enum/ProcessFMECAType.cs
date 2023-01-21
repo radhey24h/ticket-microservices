@@ -8,7 +8,8 @@ namespace FMECA.Domain.Common.Enum;
 
 public enum ProcessFMECAType
 {
-    Electric = 0,
-    Manufacturing = 1,
-    Mechanical = 2
+    None = 0,
+    Electric = 1,
+    Manufacturing = 2,
+    Mechanical = 3
 }

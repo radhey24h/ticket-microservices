@@ -12,9 +12,9 @@ namespace FMECA.Domain.Entities;
 
 public class ProcessRiskColumnDefinition : Entity
 {
-    [Key, Column(Order = 1)]
+    [Required]
     public string ColumnName { get; set; } = default!;
-    [Key, Column(Order = 2)]
+    [Required]
     public FMECAType FMECAType { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string Header { get; set; } = default!;

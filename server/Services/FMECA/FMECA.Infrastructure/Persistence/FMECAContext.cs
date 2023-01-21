@@ -22,10 +22,7 @@ public class FMECAContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<DOMAIN.FMECA>()
-          .HasKey(x => new { x.ID, x.FMECANumber });
-
-        modelBuilder.Entity<DOMAIN.PartRiskColumnDefinition>()
-          .HasKey(x => new { x.ID, x.ColumnName, x.FMECAType });
+          .HasKey(x => new { x.ID });
 
         modelBuilder.Entity<DOMAIN.FMECA>()
            .Property(u => u.FMECAStatus)

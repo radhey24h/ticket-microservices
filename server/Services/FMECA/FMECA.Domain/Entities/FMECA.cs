@@ -12,9 +12,15 @@ public class FMECA : Entity
         PartRisk = new HashSet<PartRisk>();
         ProcessRisk = new HashSet<ProcessRisk>();
     }
-    [Key, Column(Order = 1)]
-    public string FMECANumber { get; set; } = default!;
-    public string? RefrenceFMECANumber { get; set; }
+    [NotMapped]
+    public string FMECANumber
+    {
+        get
+        {
+            return FMECAType.ToString().Substring(0,3).ToUpper() + "-" + ID.ToString();
+        }
+        set { }
+    }
     public bool IsCriticalRisk { get; set; } = false;
     public FMECAType FMECAType { get; set; }
     public FMECAStatus FMECAStatus { get; set; }
