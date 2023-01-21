@@ -28,7 +28,8 @@ public class FMECA : Entity
     [MaxLength(100)]
     public string ProjectName { get; set; } = string.Empty;
     public ProcessFMECAType ProcessFMECAType { get; set; }
-
+    [ForeignKey("fk_RefrenceFMECAID")]
     public virtual ICollection<PartRisk> PartRisk { get; set; }
+    [ForeignKey("fk_RefrenceFMECAID")]
     public virtual ICollection<ProcessRisk> ProcessRisk { get; set; }
 }

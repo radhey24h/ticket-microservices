@@ -1,4 +1,5 @@
 
+using FMECA.API.Extension;
 using FMECA.Application;
 using FMECA.Infrastructure;
 using FMECA.Infrastructure.Persistence;
@@ -17,14 +18,6 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
-//add migration
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<FMECAContext>();
-    var logger = app.Services.GetService<ILogger<FMECAContextSeed>>();
-    FMECAContextSeed.SeedAsync(context, logger).Wait();
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -37,7 +30,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+await app.MigrateDatabase();
 app.Run();
-
-//Add-Migration InitialFMECAMigration -Context FMECAContext

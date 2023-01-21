@@ -11,8 +11,6 @@ namespace FMECA.Domain.Entities;
 
 public class PartRisk : Entity
 {
-    [ForeignKey("fk_FMECANumber")]
-    public string FMECANumber { get; set; }
     public int SequenceId { get; set; }
     public int PartLevel { get; set; }
     public string PartNumber { get; set; } = string.Empty;

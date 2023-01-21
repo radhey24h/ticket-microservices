@@ -11,8 +11,6 @@ namespace FMECA.Domain.Entities;
 
 public class ProcessRisk:Entity
 {
-    [ForeignKey("fk_FMECANumber")]
-    public string FMECANumber { get; set; }
     public int SequenceID { get; set; }
     public int ProcessLevel { get; set; }
     public string ProcessId { get; set; } = string.Empty;
